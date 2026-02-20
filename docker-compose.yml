@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  k6:
+    image: grafana/k6:master-with-browser
+    volumes:
+      - ./:/app
+    command: run /app/load-test.js
+    shm_size: 4gb
